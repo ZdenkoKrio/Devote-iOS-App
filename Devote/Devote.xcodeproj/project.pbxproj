@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C882697926B360CA00502999 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882697826B360CA00502999 /* Constant.swift */; };
 		C882697B26B36A2B00502999 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882697A26B36A2B00502999 /* HideKeyboardExtension.swift */; };
+		C882697D26B3715400502999 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882697C26B3715400502999 /* BackgroundImageView.swift */; };
 		C8AFBB3826B32E4E004D7C29 /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AFBB3726B32E4E004D7C29 /* DevoteApp.swift */; };
 		C8AFBB3A26B32E4E004D7C29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AFBB3926B32E4E004D7C29 /* ContentView.swift */; };
 		C8AFBB3C26B32E51004D7C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8AFBB3B26B32E51004D7C29 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		C882697826B360CA00502999 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C882697A26B36A2B00502999 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		C882697C26B3715400502999 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		C8AFBB3426B32E4E004D7C29 /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AFBB3726B32E4E004D7C29 /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		C8AFBB3926B32E4E004D7C29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C8AFBB3926B32E4E004D7C29 /* ContentView.swift */,
+				C882697C26B3715400502999 /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8AFBB4126B32E51004D7C29 /* Persistence.swift in Sources */,
+				C882697D26B3715400502999 /* BackgroundImageView.swift in Sources */,
 				C8AFBB3A26B32E4E004D7C29 /* ContentView.swift in Sources */,
 				C882697B26B36A2B00502999 /* HideKeyboardExtension.swift in Sources */,
 				C882697926B360CA00502999 /* Constant.swift in Sources */,

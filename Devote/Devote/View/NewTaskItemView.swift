@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewTaskItemView: View {
     // MARK: - Properties
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State var task: String = ""
     @Binding var isShowing: Bool
     
@@ -51,7 +52,7 @@ struct NewTaskItemView: View {
                     .foregroundColor(.pink)
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .background(
-                        Color(UIColor.systemGray6)
+                        isDarkMode ? Color(UIColor.tertiarySystemBackground) : Color(UIColor.secondarySystemBackground)
                     )
                     .cornerRadius(10)
                 
@@ -71,7 +72,9 @@ struct NewTaskItemView: View {
             } // VSTACK
             .padding(.horizontal)
             .padding(.vertical, 20)
-            .background(Color.white)
+            .background(
+                isDarkMode ? Color(UIColor.secondarySystemBackground) : Color.white
+            )
             .cornerRadius(16)
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.64),
                     radius: 24)

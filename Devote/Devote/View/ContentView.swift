@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     // MARK: - Properties
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State var task: String = ""
     @State private var showNewTaskItem: Bool = false
     
@@ -42,6 +43,34 @@ struct ContentView: View {
                 // MARK: - Main View
                 VStack {
                     // MARK: - Header
+                    HStack(spacing: 10) {
+                        Text("Devote")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        
+                        Spacer()
+                        
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(width: 70, height: 24)
+                            .background(
+                                Capsule().stroke(Color.white, lineWidth: 2)
+                            )
+                        
+                        Button(action: {
+                            isDarkMode.toggle()
+                        }, label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
+                        })
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    
                     Spacer(minLength: 80)
                     
                     // MARK: - New Task Button
@@ -68,15 +97,7 @@ struct ContentView: View {
                     // MARK: - Tasks
                     List {
                         ForEach(items) { item in
-                            VStack(alignment: .leading) {
-                                Text(item.task ?? "")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
-                            } // VSTACK - LIST ITEM
+                            ListRowItemView(item: item)
                         } // LOOP
                         .onDelete(perform: deleteItems)
                     } // LIST
@@ -103,13 +124,7 @@ struct ContentView: View {
                 UITableView.appearance().backgroundColor = UIColor.clear
             }
             .navigationBarTitle("Daily Tasks", displayMode: .large)
-            .toolbar {
-                #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                #endif
-            } // TOOLBAR
+            .navigationBarHidden(true)
             .background(BackgroundImageView())
             .background(
                 backgroundGradient.ignoresSafeArea(.all)
